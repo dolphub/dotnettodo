@@ -26,3 +26,8 @@ Live reloading for builds:
 Regular run:
 
 `dotnet run` 
+
+
+## Docs
+
+After running `dotnet run` hit `localhost:5000/swagger`
