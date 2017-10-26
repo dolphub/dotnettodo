@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.JsonPatch;
 using todoapi.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace todoapi.Controllers {
     [Route("api/[controller]")]
@@ -21,9 +22,9 @@ namespace todoapi.Controllers {
         }
 
         [HttpGet]
-        public IEnumerable<TodoItem> GetAll()
+        public async Task<IEnumerable<TodoItem>> GetAll()
         {
-            return _context.TodoItems.Include(x => x.Tags).ToList();
+            return await _context.TodoItems.Include(x => x.Tags).ToListAsync();
         }
 
         [HttpGet("{id}", Name = "GetTodo")]
