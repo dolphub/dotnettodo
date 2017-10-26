@@ -20,7 +20,7 @@ namespace todoapi.Models
 
         public string TagName { get; set; }
 
-        public int? TodoID { get; set; }
+        public long? TodoID { get; set; }
 
         [ForeignKey("TodoID")]
         public virtual TodoItem ToDo { get; set; }
